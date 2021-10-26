@@ -1,7 +1,29 @@
-import * as React from 'react';
+import React, { ReactNode } from "react";
+import { useTheme } from "@react-navigation/native";
+import { CustomTheme } from "../types/types";
 
-import { Text, TextProps } from './Themed';
+import { Text } from "./Themed";
 
-export function MonoText(props: TextProps) {
-  return <Text {...props} style={[props.style, { fontFamily: 'space-mono' }]} />;
+type StyledTextProps = {
+  style?: { [key: string]: string | number };
+  children: ReactNode;
+};
+
+export function StyledText({ children, style }: StyledTextProps) {
+  const { custom } = useTheme() as CustomTheme;
+
+  const fontFamily =
+    style?.fontWeight === "bold" ? "Poppins_700Bold" : "Poppins_400Regular";
+
+  return (
+    <Text
+      style={{
+        color: custom.colors.textColor,
+        fontFamily: fontFamily,
+        ...style,
+      }}
+    >
+      {children}
+    </Text>
+  );
 }

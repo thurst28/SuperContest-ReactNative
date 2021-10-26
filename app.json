@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "Mobile-SuperContest",
-    "slug": "Mobile-SuperContest",
-    "version": "1.0.0",
+    "name": "SuperContest",
+    "slug": "YamYum-SuperContest",
+    "version": "1.0.7",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "myapp",
@@ -10,25 +10,28 @@
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#010038"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yamyum.supercontest"
     },
     "android": {
+      "package": "com.yamyum.supercontest",
+      "googleServicesFile": "./google-services.json",
+      "versionCode": 7,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#010038"
       }
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "plugins": ["sentry-expo"]
   }
 }
